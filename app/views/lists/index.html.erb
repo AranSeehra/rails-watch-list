@@ -1,0 +1,15 @@
+<h1> Movie List </h1>
+<ol>
+    <% @lists.each do |list|%>
+    <li>
+    <div class="card" style="width: 18rem;">
+        <%# <img class="card-img-top" src="<%= "https://loremflickr.com/320/240/#{list.name}" alt="Card image cap"> %>
+        <div class="card-body">
+          <h5 class="card-title"> <strong><%= link_to list.name, list_path(list)  %></strong></h5>
+          <p class="card-text"> <%= link_to "Delete",
+          list_path(list),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </p>
+    </li>
+    <% end %>
+</ol>
+<%= link_to "Create a new list", new_list_path %>

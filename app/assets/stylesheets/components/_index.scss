@@ -3,3 +3,9 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+li {
+  list-style: none;
+  display: inline-block;
+  max-block-size: 100%;
+}
