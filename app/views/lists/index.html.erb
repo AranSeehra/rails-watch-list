@@ -1,15 +1,16 @@
 <h1> Movie List </h1>
+<%= notice %>
 <ol>
     <% @lists.each do |list|%>
     <li>
     <div class="card" style="width: 18rem;">
-        <%# <img class="card-img-top" src="<%= "https://loremflickr.com/320/240/#{list.name}" alt="Card image cap"> %>
+        <div class="card-img-top"> <%= cl_image_tag(list.photo.key, width: 286, height: 300, crop: :fill) %></div>
         <div class="card-body">
           <h5 class="card-title"> <strong><%= link_to list.name, list_path(list)  %></strong></h5>
-          <p class="card-text"> <%= link_to "Delete",
+          <p class="card-text"> <%= link_to raw('<i class="fa-solid fa-trash fa-lg"></i>'),
           list_path(list),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </p>
     </li>
     <% end %>
 </ol>
-<%= link_to "Create a new list", new_list_path %>
+<p style="text-align: center;"><%= link_to raw('<i class="fa-solid fa-plus fa-lg"></i> List'), new_list_path %> </p>

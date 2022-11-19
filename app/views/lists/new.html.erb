@@ -5,6 +5,7 @@
         <h1> Add a list name</h1>
         <%= simple_form_for(@list) do |f| %>
           <%= f.input :name %>
+          <%= f.input :photo, as: :file %>
           <%= f.submit %>
           <%= link_to "Back to Index", lists_path %>
         <% end %>

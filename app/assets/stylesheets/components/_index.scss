@@ -9,3 +9,21 @@ li {
   display: inline-block;
   max-block-size: 100%;
 }
+
+h1 {
+  font-weight: bold;
+  padding-top: 15px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  color: #737373;
+}
+
+a {
+  text-decoration: none;
+  color: #737373;
+}
+
+a:hover {
+  text-decoration: solid;
+  color: rgb(226, 162, 89);
+}
